@@ -2,3 +2,13 @@
 const stars = document.querySelector("main");
 
 
+/* play with the stars*/
+for(let i=1; i<=29; i++){
+    stars.childNodes[i].style.color = "green";
+    if( (i>=8 && i<=10) || (i>=20 && i<=22) || i=== 14 || i===16)  {
+        stars.childNodes[i].style.color = "blue";
+    }
+
+}
+
+

@@ -20,8 +20,10 @@ main {
 }
 
 .fa {
+    display: inline-block;
     padding: 5px;
 
     font-size: 4rem;
     color: white;
+    transform: rotate(20deg);
 }
