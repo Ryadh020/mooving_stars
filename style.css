@@ -1,0 +1,27 @@
+*{
+    /*outline: 1px red solid;*/
+}
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: black;
+}
+
+main {
+    background-color: black;
+}
+
+.fa {
+    padding: 5px;
+
+    font-size: 4rem;
+    color: white;
+}
