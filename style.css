@@ -24,6 +24,9 @@ main {
     padding: 5px;
 
     font-size: 4rem;
-    color: white;
-    transition: all 1000ms ease;
+    color: greenyellow;
+    transition: all 500ms ease;
+}
+.fa:hover {
+    cursor: pointer;
 }

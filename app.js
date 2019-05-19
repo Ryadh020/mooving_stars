@@ -2,22 +2,43 @@
 const stars = document.querySelector("main");
 let degree = 5;
 
-/* play with the stars*/
-for(let i=1; i<=29; i++){
-    stars.childNodes[i].style.color = "green";
+// FUCTIONS ////////////////////////////////////////
+
+/* mini star */
+function miniStar(ev) {
+    let x = ev.clientX /2;
+    let y = ev.clientY /2
     
+    ev.target.style.color = "rgb("+x+","+y+",10)";
+    ev.target.style.fontSize = "3rem";
+}
+/* maxi star */
+function maxiStar(ev) {
+    ev.target.style.color = "greenyellow";
+    ev.target.style.fontSize = "4rem";
+}
+/*rotate stars */
+function rotate(i) {
     setInterval(()=> {
         setTimeout(()=> {
             stars.childNodes[i].style.transform = 'rotate('+degree+'deg)';
             degree+=5;
         },100)
-    },110)
-    stars.childNodes[1].style.transform = 'rotate('+degree+'deg)';
+    },120)
+}
 
+// PLAY WITH THE STARS ///////////////////////////
 
-    if( (i>=8 && i<=10) || (i>=20 && i<=22) || i=== 14 || i===16)  {
-        stars.childNodes[i].style.color = "blue";
-    }
+for(let i=1; i<=29; i++){
+    stars.addEventListener("mouseover",(ev)=> {
+        miniStar(ev)
+    })
+    stars.addEventListener("mouseout",(ev)=> {
+        maxiStar(ev)
+    })
+    rotate(i);
+    
+
 }
 
 
