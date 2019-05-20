@@ -1,6 +1,6 @@
 // GET IN THE DOM :
 const stars = document.querySelector("main");
-let degree = 5;
+let degree = 0.5;
 
 // FUCTIONS ////////////////////////////////////////
 
@@ -8,8 +8,8 @@ let degree = 5;
 function miniStar(ev) {
     let x = ev.clientX /2;
     let y = ev.clientY /2
-    
-    ev.target.style.color = "rgb("+x+","+y+",10)";
+
+    ev.target.style.color = "rgb("+x+","+y+",80)";
     ev.target.style.fontSize = "3rem";
 }
 /* maxi star */
@@ -20,11 +20,13 @@ function maxiStar(ev) {
 /*rotate stars */
 function rotate(i) {
     setInterval(()=> {
-        setTimeout(()=> {
-            stars.childNodes[i].style.transform = 'rotate('+degree+'deg)';
-            degree+=5;
-        },100)
-    },120)
+        /*stars.childNodes[i].innerHTML = "&#xf669;"*/
+        stars.childNodes[i].style.transform = 'rotate('+degree+'deg)';
+        degree+=0.5;
+        //setTimeout(()=> {
+            
+        //},100)
+    },100)
 }
 
 // PLAY WITH THE STARS ///////////////////////////
