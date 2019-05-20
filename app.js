@@ -1,6 +1,6 @@
 // GET IN THE DOM :
 const stars = document.querySelector("main");
-let degree = 0.5;
+let degree = 0.1;
 
 // FUCTIONS ////////////////////////////////////////
 
@@ -18,14 +18,12 @@ function maxiStar(ev) {
     ev.target.style.fontSize = "4rem";
 }
 /*rotate stars */
-function rotate(i) {
+function rotate(i,speed) {
     setInterval(()=> {
-        /*stars.childNodes[i].innerHTML = "&#xf669;"*/
-        stars.childNodes[i].style.transform = 'rotate('+degree+'deg)';
-        degree+=0.5;
-        //setTimeout(()=> {
-            
-        //},100)
+        stars.childNodes[i].innerHTML = "&#xf0a3;"
+        stars.childNodes[i].style.transform = 'rotate('+degree*speed+'deg)';
+        degree+=0.1;
+
     },100)
 }
 
@@ -34,11 +32,12 @@ function rotate(i) {
 for(let i=1; i<=29; i++){
     stars.addEventListener("mouseover",(ev)=> {
         miniStar(ev)
+        rotate(i,5)
     })
     stars.addEventListener("mouseout",(ev)=> {
         maxiStar(ev)
     })
-    rotate(i);
+    rotate(i,1);
     
 
 }
